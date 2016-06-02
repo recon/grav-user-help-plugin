@@ -1,0 +1,133 @@
+{% extends 'partials/base.html.twig' %}
+
+{% if admin.route %}
+    {% set context = admin.page(true) %}
+{% endif %}
+
+{% block titlebar %}
+    <div class="button-bar">
+        <a class="button" href="{{ base_url }}"><i class="fa fa-reply"></i> {{ "PLUGIN_ADMIN.BACK"|tu }}</a>
+    </div>
+    <h1><i class="fa fa-fw fa-file-text-o"></i> User Help</h1>
+{% endblock %}
+
+{% block content %}
+
+    <style>
+        .page-data ul {
+            padding-left: 60px;
+            display: block;
+            list-style-type: square;
+        }
+
+        .page-data ul li .row {
+            padding-left: 0px
+        }
+
+        .block .block-content {
+            padding: 0 3rem;
+        }
+        
+        .block-content tr td:first-child{
+            padding-left: 0;
+        }
+    </style>
+
+    <div class="page-data">
+        <div class="block block-section">
+            <h1>Editor</h1>
+
+            <div class="block-content">
+                <p>
+                    <strong>Which are the most common MARKDOWN tags I can use in the editor?</strong> <br>
+                </p>
+
+                <table>
+                    <colgroup>
+                        <col width="100"/>
+                    </colgroup>
+                    <tr>
+                        <td>Bold</td>
+                        <td><code>**text**</code></td>
+                        <td><strong>text</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Italic</td>
+                        <td><code>*text*</code></td>
+                        <td><em>text</em></td>
+                    </tr>
+                    <tr>
+                        <td>Links</td>
+                        <td><code>[click here](http://example.com)</code></td>
+                        <td><a href="http://example.com">click here</a></td>
+                    </tr>
+                </table>
+
+
+                <p>
+                    <strong>Which are the most common BBCODE tags I can use in the editor?</strong> <br>
+                </p>
+
+                <table>
+                    <colgroup>
+                        <col width="100"/>
+                        <col width="500"/>
+                        <col width="150"/>
+                    </colgroup>
+                    <tr>
+                        <td>Bold</td>
+                        <td><code>**[b]text[/b]**</code></td>
+                        <td><strong>text</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Italic</td>
+                        <td><code>[i]text[/i]</code></td>
+                        <td><em>text</em></td>
+                    </tr>
+                    <tr>
+                        <td>Links</td>
+                        <td>
+                            <code>[url]http://example.com[/url]</code> <br>
+                            <code>[url="http://example.com"]click here[/url]</code>
+                        </td>
+                        <td>
+                            <a href="http://example.com">http://example.com</a> <br>
+                            <a href="http://example.com">click here</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Center</td>
+                        <td><code>[center]text[/center]</code></td>
+                        <td><div style="text-align: center">text</div></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="block block-section">
+            <h1>Page management</h1>
+
+            <div class="block-content">
+                <p>
+                    <strong>Q. How can I add a page to the sidebar or the top menu?</strong> <br>
+                    When editing a page, go to <code>Options</code> -> <code>Taxonomies</code> and add the
+                    <em>menu-top</em> or <em>menu-side</em> categories
+                </p>
+                <p>
+                    <strong>Q. How can I add metatags?</strong> <br>
+                    When editing a page, go to <code>Options</code> -> <code>Publishing</code> and add the
+                    appropriate tag names and values
+                </p>
+                <p>
+                    <strong>Q. How can I change the slug</strong> <br>
+                    When editing a page, go to <code>Advanced</code> -> <code>Overrides</code> enable the
+                    <code>Slug</code>
+                    option and update it accordingly. There is no need to add the <code>.html</code> extension, it will
+                    be updated automatically
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,11 @@
+name: User Help
+version: 1.0.0
+description: Provides an admin page where you can place easy-accesible information for your clients/editors
+icon: help
+author:
+  name: Corneliu Popescu
+  email: corneliupr@gmail.com
+license: MIT
+
+dependencies:
+  - admin
